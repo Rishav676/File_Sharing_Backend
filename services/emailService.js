@@ -4,12 +4,15 @@ async function sendMail ({from , to , subject,text,html}){
   let transporter= nodemailer.createTransport({
     host: process.env.SMTP_HOST,
     port:process.env.SMTP_PORT,
-    secure:false,
+    secure:true,
     auth:{
         user:process.env.MAIL_USER,
         password:process.env. MAIL_PASS
     }
   })
+
+ 
+ 
 
   let info =await transporter.sendMail({
     from: `inShare<${from}>`,
@@ -18,7 +21,9 @@ async function sendMail ({from , to , subject,text,html}){
    text: text,
    html: html,
   })
-  
+ 
 }
+
+
 
 module.exports=sendMail;

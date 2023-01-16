@@ -47,7 +47,7 @@ const response=  await file.save();
  res.json({file:`${process.env.APP_BASE_URL}/files/${response.uuid}`});
 });
 //http://localhost :300
-    //REsponse ->linkc
+    //REsponse ->link
     
 });
 
@@ -84,7 +84,8 @@ router.post ('/send',async (req,res)=>{
         })
     });
     return res.send({sucess:true});
+
+
+
 });
-
-
 module.exports=router;
